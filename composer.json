@@ -1,0 +1,24 @@
+{
+    "name": "shineyork\/laravel-wechat",
+    "description": "a shineyork laravel wechat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shineyork",
+            "email": "shineyork@sixstaredu.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ShineYork\\LaravelWechat\\": ""
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "ShineYork\\LaravelWechat\\WeChatServiceProvider"
+            ]
+        }
+    }
+}
