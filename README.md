@@ -2,27 +2,34 @@
 
 <p align="center"> a shineyork laravel wechat.</p>
 
+## 描述
 
-## Installing
+这是基于laravel框架编辑的,微信公众号的组件
+
+## 安装
 
 ```shell
-$ composer require shineyork/laravel-wechat -vvv
+$ composer require shineyork/laravel-wechat:master-dev
 ```
 
-## Usage
 
-TODO
+## 配置文件发布
 
-## Contributing
+```shell
+php artisan vendor:publish --provider="ShineYork\LaravelWechat\WeChatServiceProvider"
+```
 
-You can contribute in one of three ways:
+## 配置
 
-1. File bug reports using the [issue tracker](https://github.com/shineyork/laravel-wechat/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/shineyork/laravel-wechat/issues).
-3. Contribute new features or update the wiki.
-
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
-
-## License
-
-MIT
+Laravel 应用
+在 config/app.php 注册 ServiceProvider 和 Facade (Laravel 5.5 无需手动注册)
+```
+'providers' => [
+    // ...
+    ShineYork\LaravelWechat\WeChatServiceProvider::class,
+]
+```
+然后在浏览器中访问的路由如下 http://localhost/swechat
+```
+Route::any('/', 'WeChatController@index')->middleware('swechat.check');
+```
