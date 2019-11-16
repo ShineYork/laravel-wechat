@@ -9,7 +9,7 @@
 ## 安装
 
 ```shell
-$ composer require shineyork/laravel-wechat:master-dev
+$ composer require shineyork/laravel-wechat:dev-master
 ```
 
 
